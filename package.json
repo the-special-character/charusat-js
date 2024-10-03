@@ -1,0 +1,19 @@
+{
+  "name": "charusat-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/the-special-character/charusat-js.git",
+  "author": "Yagnesh Modh <contact@thespecialcharacter.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "zod": "^3.23.8",
+    "zon": "^1.0.3"
+  }
+}
