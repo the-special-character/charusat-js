@@ -1,25 +1,22 @@
 const express = require("express");
-
 const loginSchema = require("../validations/login.validation");
 const registrationSchema = require("../validations/registration.validation");
 const validateMiddleware = require("../middleware/validate.middleware");
+const {
+  login,
+  register,
+  fetchAllUsers,
+  fetchUser,
+} = require("../controller/user.controller");
 
 const router = express.Router();
 
-router.post("/login", validateMiddleware(loginSchema), (req, res) => {
-  res.send("login success");
-});
+router.post("/login", validateMiddleware(loginSchema), login);
 
-router.post("/register", validateMiddleware(registrationSchema), (req, res) => {
-  res.send("register success");
-});
+router.post("/register", validateMiddleware(registrationSchema), register);
 
-router.get("/", (req, res) => {
-  res.send("user data");
-});
+router.get("/", fetchAllUsers);
 
-router.get("/:id", (req, res) => {
-  res.send("user id data");
-});
+router.get("/:id", fetchUser);
 
 module.exports = router;
