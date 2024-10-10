@@ -7,7 +7,12 @@ const port = 3000;
 app.use(express.json());
 
 app.use("/user", user);
+
 app.use("/products", products);
+
+app.use("/", (req, res) => {
+  res.send("server started");
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
